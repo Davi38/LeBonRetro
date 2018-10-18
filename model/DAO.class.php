@@ -11,7 +11,7 @@
     // L'objet local PDO de la base de donnée
     private $db;
     // Le type, le chemin et le nom de la base de donnée
-    private $database = '../data/db/bricomachin.db';
+    private $database = '../data/db/article.db';
 
     // Constructeur chargé d'ouvrir la BD
     function __construct() {
@@ -38,8 +38,26 @@
 
     // retourne les articles de la categorie donnée en paramètre
     function getArticleCategorie($categorie) {
+      $sth = $this->db->prepare("SELECT * FROM article WHERE categorie=" . $categorie);
+      $sth->execute();
+      $result = $sth->fetchAll();
+      return tableauTOarticles($result);
     }
 
+
+    function tableauTOarticles($tab) {
+      $articles = array();
+      foreach ($result as $art) {
+        $arti = new Article();
+        $arti->ref = $art[0];
+        $arti->libelle = $art[1];
+        $arti->categorie = $art[2];
+        $arti->prix = $art[3];
+        $arti->image = $art[4];
+        array_push($articles, $arti);
+      }
+      return $articles;
+    }
 
 
     // Accès aux n premiers articles
@@ -50,18 +68,7 @@
       $sth->execute();
       $result = $sth->fetchAll();
 
-      $articles = array();
-
-      foreach ($result as $art) {
-        $arti = new Article();
-        $arti->ref = $art[0];
-        $arti->libelle = $art[1];
-        $arti->categorie = $art[2];
-        $arti->prix = $art[3];
-        $arti->image = $art[4];
-        array_push($articles, $arti);
-      }
-      return $articles;
+      return tableauTOarticles($result);
     }
 
     // Acces au n articles à partir de la reférence $ref
@@ -71,18 +78,8 @@
       $sth = $this->db->prepare("SELECT * FROM article WHERE ref>$ref ORDER BY ref LIMIT $n");
       $sth->execute();
       $result = $sth->fetchAll();
-      //print_r($result);
-      $articles = array();
-      foreach ($result as $art) {
-        $arti = new Article();
-        $arti->ref = $art[0];
-        $arti->libelle = $art[1];
-        $arti->categorie = $art[2];
-        $arti->prix = $art[3];
-        $arti->image = $art[4];
-        array_push($articles, $arti);
-      }
-      return $articles;
+      
+      return tableauTOarticles($result);
     }
 
     // Acces à l'article suivant l'article dans l'ordre des références
