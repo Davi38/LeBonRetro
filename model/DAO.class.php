@@ -129,6 +129,17 @@
     }
 
 
+    // retourne l'objet vendeur si il est trouvé dans la base de données avec le bon mot de passe
+    // retourne null sinon
+    function getVendeur($id,$mdp) {
+      $sth = $this->db->prepare('SELECT * FROM Vendeur WHERE nom="' . $id .'"');
+      $sth->execute();
+      $result = $sth->fetchAll();
+
+      return $this->tableauTOvendeurs($result)[0];
+    }
+
+
     // Acces aux n articles qui suivent l'article $a dans l'ordre des références
     function next(Article $a, $n) {
       $result = $this->getN($a->identifiant, $n);

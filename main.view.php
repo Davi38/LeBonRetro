@@ -41,6 +41,16 @@
       h1 {
         text-align: center;
       }
+
+      li .deconnexion {
+        color: white;
+        text-align: center;
+        padding: 12px;
+        cursor: pointer;
+        background-color: #333;
+        font-size: 16px;
+        border: none;
+      }
     </style>
   </head>
 
