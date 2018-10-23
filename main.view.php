@@ -42,6 +42,11 @@
         text-align: center;
       }
 
+      h1 a{
+        text-decoration: none;
+      }
+
+
       li .deconnexion {
         color: white;
         text-align: center;
@@ -56,7 +61,7 @@
 
   <body>
 
-    <h1>LeBonRetro</h1>
+    <h1><a href="main.view.php">LeBonRetro</a></h1>
 
     <?php include("view/menu.view.php"); ?>
 
