@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
     <title>Bricomachin</title>
     <meta charset="UTF-8"/>
