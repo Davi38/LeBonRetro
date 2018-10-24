@@ -1,11 +1,7 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>LeBonRetro</title>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="content-type" content="text/html;" />
-    <meta name="author" content="Léon Davi" />
-    <link rel="shortcut icon" href="data/images/logo_lebonretro.jpg" />
-    <link rel="stylesheet" type="text/css" href="data/style.css">
+    <?php include("view/entete.view.html"); ?>
   </head>
 
   <body>
@@ -15,9 +11,7 @@
     <?php include("view/menu.view.php"); ?>
 
 
-
-
-    <p>Bienvenue sur <strong>LeBonRetro !</strong><br>Votre site de référence pour rechercher des vieux objets ou déposer vos propres annonces !<br></p>
-
+    <p>LeBonRetro est le site référent de petites annonces de particulier à particulier et professionnels en France.<br>
+    Découvrez nos annonces ordinateurs, téléphones, décorations, etc... Déposez une annonce gratuite en toute simplicité pour vendre, donner vos biens ou promouvoir vos services. Avec une dizaine d'annonces vous trouverez à tous les couts l'objet d'occasion ou neuf que vous désirez.</p>
   </body>
 </html>
