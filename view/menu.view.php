@@ -1,4 +1,5 @@
 <ul>
+  <li><a href="../view/main.view.php">ACCUEIL</a></li>
   <li><a href="../controler/Controlleur.ctrl.php?categorie=ordinateur">Ordinateurs</a></li>
   <li><a href="../controler/Controlleur.ctrl.php?categorie=telephone">Téléphones</a></li>
   <li><a href="../controler/Controlleur.ctrl.php?categorie=decoration">Décoration</a></li>

@@ -10,14 +10,14 @@
 
     <?php
         print '<div class="annonce"><img src="../data/images/' . $annonce->image . '" alt="Photo article" width="200" height="200">';
-        print "<strong>$annonce->nom</strong><br><br>";
-        print "$annonce->prix<br>$annonce->datePublication<br>";
+        print "<h2>$annonce->nom</h2><br><br>";
+        print "$annonce->prix €<br>$annonce->datePublication<br>";
 
-        print "<strong>Description</strong>";
-        print "<strong>$annonce->description</strong>";
+        print "<strong>Description : </strong>";
+        print "<strong>$annonce->libelle</strong><br>";
 
-        print "<strong>Localisation</strong>";
-        print "<strong>$annonce->localisation</strong>";
+        print "<strong>Localisation : </strong>";
+        print "<strong>$annonce->localisation</strong><br>";
         print "</div>";
 
     ?>

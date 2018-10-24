@@ -5,10 +5,9 @@
   </head>
 
   <body>
+    <?php include("../view/menu.view.php"); ?>
 
     <h1>LeBonRetro</h1>
-
-    <?php include("../view/menu.view.php"); ?>
 
 
     <p>LeBonRetro est le site référent de petites annonces de particulier à particulier et professionnels en France.<br>
