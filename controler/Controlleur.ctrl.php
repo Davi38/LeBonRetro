@@ -16,6 +16,15 @@
       include("../view/vendeurs.view.php");
     }
 
+  } elseif (isset($_GET['article'])) {
+      $annonce = $dao->getArticle($_GET['article']);
+      $annonce = reset($annonce);
+      if ($annonce) {
+        include("../view/annonce.view.php");
+      } else {
+        include("../view/main.view.php");
+      }
+
   } else {
     $articles = $dao->getAllArticle();
     include("../view/articles.view.php");

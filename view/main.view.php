@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <?php include("view/entete.view.html"); ?>
+    <?php include("../view/entete.view.html"); ?>
   </head>
 
   <body>
 
     <h1>LeBonRetro</h1>
 
-    <?php include("view/menu.view.php"); ?>
+    <?php include("../view/menu.view.php"); ?>
 
 
     <p>LeBonRetro est le site référent de petites annonces de particulier à particulier et professionnels en France.<br>

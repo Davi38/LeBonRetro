@@ -66,3 +66,18 @@ article img {
   float: left;
   padding-right: 1em;
 }
+
+.annonce {
+  width : 80%;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.annonce img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height : 300px;
+}

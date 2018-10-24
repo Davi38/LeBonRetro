@@ -10,11 +10,11 @@
 
     <?php
         foreach ($articles as $article) {
-          print '<article><img src="../data/images/' . $article->image . '" alt="Photo article" width="200" height="200">';
+          print '<a href="../controler/Controlleur.ctrl.php?article=' . $article->ref . '"><article><img src="../data/images/' . $article->image . '" alt="Photo article" width="200" height="200">';
           print "<strong>$article->nom</strong><br><br>";
           print "$article->categorie<br>$article->localisation<br>";
           print "<strong>$article->prix €</strong>";
-          print "</article>";
+          print "</article></a>";
         }
     ?>
   </body>

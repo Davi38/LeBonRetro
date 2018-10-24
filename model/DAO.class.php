@@ -99,6 +99,17 @@
       return $this->tableauTOarticles($result);
     }
 
+
+    // retourne l'objet d'identifiant id
+    function getArticle($id) {
+      $sth = $this->db->prepare("SELECT * FROM article WHERE identifiant=$id");
+      $sth->execute();
+      $result = $sth->fetchAll();
+
+      return $this->tableauTOarticles($result);
+    }
+
+
     // Acces au n articles à partir de la reférence $ref
     // Cette méthode retourne un tableau contenant n  articles de
     // la base sous la forme d'objets de la classe Article.
