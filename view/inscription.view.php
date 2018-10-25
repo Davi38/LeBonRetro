@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>LeBonRetro</title>
+    <?php include("../view/entete.view.html"); ?>
   </head>
   <body>
 

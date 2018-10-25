@@ -16,6 +16,11 @@
       include("../view/vendeurs.view.php");
     }
 
+  } elseif (isset($_GET['localisation'])) {
+    if ($_GET['localisation'] != "") {
+      $articles = $dao->getArticlesLocalisation();
+      include("../view/articles.view.php");
+    }
   } elseif (isset($_GET['article'])) {
       $annonce = $dao->getArticle($_GET['article']);
       $annonce = reset($annonce);

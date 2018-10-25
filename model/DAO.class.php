@@ -117,6 +117,15 @@
       return $this->tableauTOarticles($result);
     }
 
+    // retourne l'objet d'identifiant id
+    function getArticlesLocalisation($loc) {
+      $sth = $this->db->prepare('SELECT * FROM article WHERE localisation="' . $loc . '"');
+      $sth->execute();
+      $result = $sth->fetchAll();
+
+      return $this->tableauTOarticles($result);
+    }
+
 
     // Acces au n articles à partir de la reférence $ref
     // Cette méthode retourne un tableau contenant n  articles de
@@ -141,12 +150,10 @@
     // ATTENTION : pour ajouter un article il faut que le vendeur de l'article soit existant !! (FOREIGN KEY(nomVendeur))
     function addArticle($id,$nom,$description,$nomVendeur,$prix,$image,$categorie,$datePublication,$localisation) {
       var_dump($id,$nom,$description,$nomVendeur,$prix,$image,$categorie,$datePublication,$localisation);
-      $sth = $this->db->prepare("INSERT INTO article(identifiant,nom,description,nomVendeur,prix,image,categorie,DatePublication, localisation)
-                                VALUES ($id,$nom,$description,$nomVendeur,$prix,$image,$categorie,$datePublication,$localisation)");
-      $sth->execute();
-      $result = $sth->fetchAll();
 
-      return $this->tableauTOarticles($result);
+      $sth = $this->db->prepare('INSERT INTO article VALUES ("' . $id . '","' . $nom . '","' . $description . '","' . $nomVendeur . '","' . $prix . '","' . $image . '","' . $categorie .'","' . $datePublication . '","' . $localisation . '")');
+      var_dump($sth);
+      $sth->execute();
     }
 
     // retourne un identifiant unique qui n'est pas déjà dans la base de données
@@ -162,7 +169,7 @@
     // retourne l'objet vendeur si il est trouvé dans la base de données avec le bon mot de passe
     // retourne null sinon
     function getVendeur($id,$mdp) {
-      $sth = $this->db->prepare('SELECT * FROM Vendeur WHERE nom="' . $id .'"');
+      $sth = $this->db->prepare('SELECT * FROM Vendeur WHERE identifiant="' . $id .'"AND motDePasse="'. $mdp .'"');
       $sth->execute();
       $result = $sth->fetchAll();
 
