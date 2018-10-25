@@ -6,6 +6,8 @@
   </head>
   <body>
 
+    <?php include("../view/menu.view.php"); echo 'ici';?>
+
     <form action="../controler/Authentification.ctrl.php" method="GET">
       <fieldset>
 

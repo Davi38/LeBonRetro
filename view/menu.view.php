@@ -9,7 +9,7 @@
   <?php
     session_start();
     if (!isset($_SESSION['nom'])) {
-      echo '<li><a href="view/authentification.view.php">Se connecter</a></li>';
+      echo '<li><a href="../view/authentification.view.php">Se connecter</a></li>';
     } else {
       echo '<li><button onclick="deconnexion()" class="deconnexion">Deconnexion</button></li>';
     }
@@ -20,7 +20,7 @@
 function deconnexion() {
   var r = confirm("Etes vous sûr de vouloir vous déconnecter ?");
   if (r) {
-    location.replace("http://www-etu-info.iut2.upmf-grenoble.fr/~davidovl/controler/Authentification.ctrl.php?deconnexion=1");
+    location.replace("../controler/Authentification.ctrl.php?deconnexion=1");
   }
 }
 </script>
