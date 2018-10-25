@@ -34,6 +34,10 @@ h1 {
   text-align: center;
 }
 
+h1 a{
+  text-decoration: none;
+}
+
 li .deconnexion {
   color: white;
   text-align: center;
@@ -42,6 +46,10 @@ li .deconnexion {
   background-color: #333;
   font-size: 16px;
   border: none;
+}
+
+li .deconnexion:hover {
+  background-color: #111;
 }
 
 article {
