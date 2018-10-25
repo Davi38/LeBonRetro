@@ -14,6 +14,7 @@
       echo '<li><button onclick="deconnexion()" class="deconnexion">Deconnexion</button></li>';
     }
   ?>
+  <li><a href="../view/inscription.view.php">S'inscrire</a></li>
 </ul>
 
 <script>
