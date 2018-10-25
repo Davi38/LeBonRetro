@@ -48,6 +48,10 @@ li .deconnexion {
   border: none;
 }
 
+li .deconnexion:hover {
+  background-color: #111;
+}
+
 article {
   border : 2px solid black;
   width : 50%;
