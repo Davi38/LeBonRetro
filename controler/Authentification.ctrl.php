@@ -13,18 +13,26 @@
       $_SESSION['telephone'] = $vendeur->telephone;
       $_SESSION['mail'] = $vendeur->mail;
 
+      header('Location: ../view/main.view.php');
+      exit();
+
+    } else {
+      include("../view/authentification.view.php");
+      echo '<script> alert("Identifiant ou mot de passe incorrect") </script>';
     }
 
   } elseif (isset($_GET['deconnexion'])) {
     unset($_SESSION['nom']);
     unset($_SESSION['telephone']);
     unset($_SESSION['mail']);
-  }// else {
-  //  include("../main.view.php");
-  //}
 
-  header('Location: ../main.view.php');
-  exit();
+    header('Location: ../view/main.view.php');
+    exit();
+  }  else {
+    include("../view/main.view.php");
+  }
+
+
 
   //$articles = $dao->getN(2,1);
   // Charge la vue

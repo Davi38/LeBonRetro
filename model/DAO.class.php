@@ -147,7 +147,11 @@
       $sth->execute();
       $result = $sth->fetchAll();
 
-      return $this->tableauTOvendeurs($result)[0];
+      if ($result) {
+        return $this->tableauTOvendeurs($result)[0];
+      } else {
+        return null;
+      }
     }
 
 
