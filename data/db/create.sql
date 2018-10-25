@@ -6,7 +6,7 @@ CREATE TABLE article (
   prix REAL,
   image TEXT,
   categorie TEXT,
-  DatePublication DATE,
+  DatePublication TEXT,
   localisation TEXT,
   FOREIGN KEY(categorie) REFERENCES categorie(nom),
   FOREIGN KEY(nomVendeur) REFERENCES vendeur(nom)
@@ -20,7 +20,9 @@ CREATE TABLE categorie (
 
 
 CREATE TABLE vendeur (
+  identifiant TEXT PRIMARY KEY,
   nom TEXT,
   telephone TEXT,
-  mail TEXT
+  mail TEXT,
+  motDePasse TEXT
 );

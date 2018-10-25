@@ -68,6 +68,14 @@
       return $this->tableauTOarticles($result);
     }
 
+    function getAllCategorie() {
+      $sth = $this->db->prepare("SELECT nom FROM categorie");
+      $sth->execute();
+      $result = $sth->fetchAll();
+
+      return $result;
+    }
+
     // retourne tous les vendeurs de la base de données
     function getAllVendeur() {
       $sth = $this->db->prepare("SELECT * FROM vendeur");
@@ -132,11 +140,22 @@
     // Ajouter un article dans la BDD
     // ATTENTION : pour ajouter un article il faut que le vendeur de l'article soit existant !! (FOREIGN KEY(nomVendeur))
     function addArticle($id,$nom,$description,$nomVendeur,$prix,$image,$categorie,$datePublication,$localisation) {
-      $sth = $this->db->prepare("INSERT INTO article VALUES");
+      var_dump($id,$nom,$description,$nomVendeur,$prix,$image,$categorie,$datePublication,$localisation);
+      $sth = $this->db->prepare("INSERT INTO article(identifiant,nom,description,nomVendeur,prix,image,categorie,DatePublication, localisation)
+                                VALUES ($id,$nom,$description,$nomVendeur,$prix,$image,$categorie,$datePublication,$localisation)");
       $sth->execute();
       $result = $sth->fetchAll();
 
       return $this->tableauTOarticles($result);
+    }
+
+    // retourne un identifiant unique qui n'est pas déjà dans la base de données
+    function newIdentifiant() {
+      $sth = $this->db->prepare("SELECT COUNT(identifiant) FROM article");
+      $sth->execute();
+      $result = $sth->fetchAll();
+
+      return $result[0][0] + 1;
     }
 
 

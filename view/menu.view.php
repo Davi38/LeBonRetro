@@ -7,7 +7,9 @@
   <li><a href="../controler/Controlleur.ctrl.php?vendeur=1">Vendeurs</a></li>
 
   <?php
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+      session_start();
+    }
     if (!isset($_SESSION['nom'])) {
       echo '<li><a href="../view/authentification.view.php">Se connecter</a></li>';
     } else {

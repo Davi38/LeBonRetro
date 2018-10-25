@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>LeBonRetro</title>
+    <?php include("../view/entete.view.html"); ?>
   </head>
-  <body>
 
-    <?php include("../view/menu.view.php"); echo 'ici';?>
+  <body>
+    <?php include("../view/menu.view.php");?>
 
     <form action="../controler/Authentification.ctrl.php" method="GET">
       <fieldset>
