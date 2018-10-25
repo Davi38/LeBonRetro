@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>Bricomachin</title>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="content-type" content="text/html;" />
-    <meta name="author" content="Léon Davi" />
+    <?php include("../view/entete.view.html"); ?>
   </head>
 
   <body>
-    <header>
-      <h1>Articles</h1>
-    </header>
-      <?php
-          foreach ($articles as $article) {
-            //print "<article><h2>$article->nom<br>";
-            //print "<br>$article->prix \u20ac</h2></article>";
-            print "<article><h2>$article->nom ";
-            print "$article->prix euros</h2></article>";
-          }
+    <?php include("../view/menu.view.php"); ?>
+    <h1>Articles</h1>
 
-      ?>
+    <?php
+        foreach ($articles as $article) {
+          print '<a href="../controler/Controlleur.ctrl.php?article=' . $article->ref . '"><article><img src="../data/images/' . $article->image . '" alt="Photo article" width="200" height="200">';
+          print "<strong>$article->nom</strong><br><br>";
+          print "$article->categorie<br>$article->localisation<br>";
+          print "<strong>$article->prix €</strong>";
+          print "</article></a>";
+        }
+    ?>
   </body>
 </html>

@@ -1,9 +1,10 @@
 <ul>
-  <li><a href="controler/Controlleur.ctrl.php?categorie=ordinateur">Ordinateurs</a></li>
-  <li><a href="controler/Controlleur.ctrl.php?categorie=telephone">Téléphones</a></li>
-  <li><a href="controler/Controlleur.ctrl.php?categorie=decoration">Décoration</a></li>
-  <li><a href="controler/Controlleur.ctrl.php?categorie=all">TOUT !</a></li>
-  <li><a href="controler/Controlleur.ctrl.php?vendeur=1">Vendeurs</a></li>
+  <li><a href="../view/main.view.php">ACCUEIL</a></li>
+  <li><a href="../controler/Controlleur.ctrl.php?categorie=ordinateur">Ordinateurs</a></li>
+  <li><a href="../controler/Controlleur.ctrl.php?categorie=telephone">Téléphones</a></li>
+  <li><a href="../controler/Controlleur.ctrl.php?categorie=decoration">Décoration</a></li>
+  <li><a href="../controler/Controlleur.ctrl.php?categorie=all">TOUT !</a></li>
+  <li><a href="../controler/Controlleur.ctrl.php?vendeur=1">Vendeurs</a></li>
 
   <?php
     session_start();
@@ -19,7 +20,7 @@
 function deconnexion() {
   var r = confirm("Etes vous sûr de vouloir vous déconnecter ?");
   if (r) {
-    location.replace("controler/Authentification.ctrl.php?deconnexion=1");
+    location.replace("http://www-etu-info.iut2.upmf-grenoble.fr/~davidovl/controler/Authentification.ctrl.php?deconnexion=1");
   }
 }
 </script>
