@@ -10,11 +10,11 @@
     session_start();
     if (!isset($_SESSION['nom'])) {
       echo '<li><a href="../view/authentification.view.php">Se connecter</a></li>';
+      echo '<li><a href="../view/inscription.view.php">S\'inscrire</a></li>';
     } else {
       echo '<li><button onclick="deconnexion()" class="deconnexion">Deconnexion</button></li>';
     }
   ?>
-  <li><a href="../view/inscription.view.php">S'inscrire</a></li>
 </ul>
 
 <script>
