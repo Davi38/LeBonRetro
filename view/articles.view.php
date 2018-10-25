@@ -33,10 +33,12 @@
 
     <?php
         foreach ($articles as $article) {
-          print '<a href="../controler/Controlleur.ctrl.php?article=' . $article->ref . '"><article><img src="../data/images/' . $article->image . '" alt="Photo article" width="200" height="200">';
-          print "<strong>$article->nom</strong><br><br>";
-          print "$article->categorie<br>$article->localisation<br>";
-          print "<strong>$article->prix €</strong>";
+          print '<a class="lien" href="../controler/Controlleur.ctrl.php?article=' . $article->ref . '">';
+          echo '<article><img src="../data/images/' . $article->image . '" alt="Photo article" width="200" height="200">';
+          print "<h2>$article->nom</h2>";
+          print "$article->categorie<br>$article->localisation";
+          print '<p class="prix"> ' . $article->prix . ' €</p>';
+          print '<p>Publié le ' . $article->datePublication . '</p>';
           print "</article></a>";
         }
     ?>
