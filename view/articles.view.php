@@ -8,25 +8,30 @@
     <?php include("../view/menu.view.php"); ?>
 
     <form action="../controler/Controlleur.ctrl.php" method="GET">
+      <input type="hidden" value="1" name="choixMultiple" />
       <fieldset>
-        <p>Catégorie : </p>
-        <select name="categorie">
-           <option value="ordinateur">Ordinateur</option>
-           <option value="telephone">Téléphone</option>
-           <option value="decoration">Décoration</option>
-           <option value="all" selected>Toutes catégories</option>
-        </select>
-        <p>Localisation : </p>
-        <input type="texte" name="localisation"/>
+        <p>
+          Catégorie :
+          <select name="categorie">
+             <option value="ordinateur">Ordinateur</option>
+             <option value="telephone">Téléphone</option>
+             <option value="decoration">Décoration</option>
+             <option value="all" selected>Toutes catégories</option>
+          </select>
+        </p>
+        <p>
+          Localisation :
+          <input type="texte" name="localisation"/>
+        </p>
 
-        <p>Trier par : </p>
-        <select name="tri">
-           <option value="date">Date</option>
-           <option value="prix">Prix</option>
-           <option value="aphab">Ordre alphabétique</option>
-        </select>
-
-        <br><br>
+        <p>
+          Trier par :
+          <select name="tri">
+             <option value="DatePublication">Date</option>
+             <option value="prix">Prix</option>
+             <option value="nom">Ordre alphabétique</option>
+          </select>
+        </p>
         <input type="submit" name="action" value="Valider" />
       </fieldset>
     </form>

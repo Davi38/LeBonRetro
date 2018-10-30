@@ -95,6 +95,30 @@
       return $this->tableauTOarticles($result);
     }
 
+    // retourne les articles de la categorie donnée en paramètre
+    function getArticlesCriteresMultiple($categorie, $localisation, $trie) {
+      $requetteAdd = "";
+      if ($categorie != null) {
+        $requetteAdd .= ' WHERE categorie="' . $categorie . '"';
+      }
+      if ($categorie != null && $localisation != null) {
+        $requetteAdd .= ' AND ';
+      } elseif ($categorie = null) {
+        $requetteAdd .= ' WHERE ';
+      }
+      if ($localisation != null) {
+        $requetteAdd .= ' localisation="' . $localisation . '"';
+      }
+      if ($trie != null) {
+        $requetteAdd .= ' ORDER BY ' . $trie;
+      }
+      $sth = $this->db->prepare('SELECT * FROM article ' . $requetteAdd);
+      $sth->execute();
+      $result = $sth->fetchAll();
+
+      return $this->tableauTOarticles($result);
+    }
+
 
     // Accès aux n premiers articles
     // Cette méthode retourne un tableau contenant les n permier articles de
