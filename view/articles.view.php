@@ -7,9 +7,9 @@
   <body>
     <?php include("../view/menu.view.php"); ?>
 
-    <form action="../controler/Controlleur.ctrl.php" method="GET">
+    <form action="../controler/Controlleur.ctrl.php" method="GET" class="formulaire_article_choix">
       <input type="hidden" value="1" name="choixMultiple" />
-      <fieldset>
+      <div class="choix_tri">
         <p>
           Catégorie :
           <select name="categorie">
@@ -19,11 +19,14 @@
              <option value="all" selected>Toutes catégories</option>
           </select>
         </p>
+      </div>
+      <div class="choix_tri">
         <p>
           Localisation :
           <input type="texte" name="localisation"/>
         </p>
-
+      </div>
+      <div class="choix_tri">
         <p>
           Trier par :
           <select name="tri">
@@ -32,8 +35,8 @@
              <option value="nom">Ordre alphabétique</option>
           </select>
         </p>
-        <input type="submit" name="action" value="Valider" />
-      </fieldset>
+      </div>
+      <input type="submit" name="action" value="Valider" />
     </form>
 
     <?php

@@ -5,7 +5,7 @@
   </head>
   <body>
 
-    <?php include("../view/menu.view.php"); echo 'ici';?>
+    <?php include("../view/menu.view.php");?>
 
     <form action="../controler/Inscription.ctrl.php" method="GET">
       <fieldset>
