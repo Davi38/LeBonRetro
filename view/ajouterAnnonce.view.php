@@ -15,9 +15,11 @@
         <input type="texte" name="des"/>
         <p>Prix : </p>
         <input type="texte" name="prix"/>
+        <!--
+        Il n'est pas possible de choisir une image : upload non implémentée (trop lourd, et pas l'objectif du projet)
         <p>Image : </p>
-        <input type="texte" name="img"/>
-        <p>Categorie : </p>
+        <input type="texte" name="img"/>-->
+        <p>Categorie : (ordinateur, telephone, decoration)</p>
         <input type="texte" name="cat"/>
         <p>Localisation : </p>
         <input type="texte" name="loc"/>

@@ -31,14 +31,6 @@
     }
   }
 
-  if (isset($_GET['img'])) {
-    if ($_GET['img'] != '') {
-      $img = $_GET['img'];
-    } else {
-      $erreur .= 'Image manquante, ';
-    }
-  }
-
   if (isset($_GET['cat'])) {
     if ($_GET['cat'] != '') {
 
@@ -61,6 +53,10 @@
     }
   }
 
+  if (isset($cat)) {
+    $img = $cat;
+  }
+
   if (isset($_GET['loc'])) {
     if ($_GET['loc'] != '') {
       $loc = $_GET['loc'];
@@ -71,15 +67,12 @@
 
   if (isset($nom) && isset($des) && isset($prix) && isset($img) && isset($cat) && isset($loc)) {
     $newid = $dao->newIdentifiant(); // identifiant unique
-    //echo $newid;
 
     date_default_timezone_set('UTC'); // Définit le fuseau horaire par défaut à utiliser
     $today = date("d.m.y"); // data au jour d'aujourd'hui
-    //echo $today;
 
     $_SESSION['nom'] = "Davi";
     $nomVendeur = $_SESSION['nom']; // nom du vendeur qui dépose l'annonce (stocké dans les variables de sessions)
-    //echo $_SESSION['nom'];
 
     $vendeur = $dao->addArticle($newid,$nom,$des,$nomVendeur,$prix,$img,$cat,$today,$loc);
   } else {

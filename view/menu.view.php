@@ -14,6 +14,7 @@
     } else {
       echo '<li><a href="../view/AjouterAnnonce.view.php">Déposer une annonce</a></li>';
       echo '<li><button onclick="deconnexion()" class="deconnexion">Deconnexion</button></li>';
+      echo '<li class="nom_flottant_droite">Bienvenue ' . $_SESSION['nom'] . ' !</li>';
     }
   ?>
 </ul>

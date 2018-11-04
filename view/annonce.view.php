@@ -6,7 +6,7 @@
 
   <body>
     <?php include("../view/menu.view.php"); ?>
-    <h1>Articles</h1>
+    <h1>Article</h1>
 
     <?php
         print '<div class="annonce"><img src="../data/images/' . $annonce->image . '" alt="Photo article" width="200" height="200">';

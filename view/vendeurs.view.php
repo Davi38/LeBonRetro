@@ -9,8 +9,8 @@
           foreach ($vendeurs as $vendeur) {
             //print "<article><h2>$article->nom<br>";
             //print "<br>$article->prix \u20ac</h2></article>";
-            print "<article><h2>$vendeur->nom ";
-            print "$vendeur->telephone $vendeur->mail</h2></article>";
+            print "<article><h2>$vendeur->nom</h2>";
+            print "<p>Téléphone : $vendeur->telephone <br>Mail : $vendeur->mail</p></article>";
           }
 
       ?>

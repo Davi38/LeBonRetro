@@ -164,8 +164,8 @@
 
 
     // Ajouter un vendeur dans la BDD
-    function addVendeur($nom,$telephone,$mail) {
-      $sth = $this->db->prepare("INSERT INTO vendeur(nom,telephone,mail) VALUES ($nom,$telephone,$mail)");
+    function addVendeur($id,$nom,$telephone,$mail, $mdp) {
+      $sth = $this->db->prepare('INSERT INTO vendeur(identifiant, nom,telephone,mail, motDePasse) VALUES ("' . $id . '","' . $nom . '","' . $telephone . '","' . $mail . '","' . $mdp . '")');
       $sth->execute();
     }
 
