@@ -28,6 +28,21 @@ li a {
   font-size: 20px;
 }
 
+.changementPage {
+  display: block;
+  margin-bottom: 100px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: black;
+  font-size: 20px;
+}
+
+.changementPage a {
+  margin: 1em;
+}
+
 .nom_flottant_droite {
   display: block;
   color: white;

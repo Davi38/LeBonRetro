@@ -75,6 +75,9 @@
     $nomVendeur = $_SESSION['nom']; // nom du vendeur qui dépose l'annonce (stocké dans les variables de sessions)
 
     $vendeur = $dao->addArticle($newid,$nom,$des,$nomVendeur,$prix,$img,$cat,$today,$loc);
+
+    header('Location: Controlleur.ctrl.php');
+    exit;
   } else {
     include("../view/ajouterAnnonce.view.php");
     echo '<script> alert("La page a renvoyée les erreurs suivantes : ' . $erreur . '") </script>';

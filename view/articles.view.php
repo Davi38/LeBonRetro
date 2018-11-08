@@ -13,17 +13,17 @@
         <p>
           Catégorie :
           <select name="categorie">
-             <option value="ordinateur">Ordinateur</option>
-             <option value="telephone">Téléphone</option>
-             <option value="decoration">Décoration</option>
-             <option value="all" selected>Toutes catégories</option>
+             <option value="ordinateur" <?php if($cat=="ordinateur"){echo"selected";} ?> >Ordinateur</option>
+             <option value="telephone" <?php if($cat=="telephone"){echo"selected";} ?> >Téléphone</option>
+             <option value="decoration" <?php if($cat=="decoration"){echo"selected";} ?> >Décoration</option>
+             <option value="all" <?php if($cat=="all"){echo"selected";} ?> >Toutes catégories</option>
           </select>
         </p>
       </div>
       <div class="choix_tri">
         <p>
           Localisation :
-          <input type="texte" name="localisation"/>
+          <input type="texte" name="localisation" <?php echo'value="'.$loc.'"'; ?>/>
         </p>
       </div>
       <div class="choix_tri">
@@ -50,5 +50,7 @@
           print "</article></a>";
         }
     ?>
+    <p class="changementPage"><a href="../controler/Controlleur.ctrl.php?debut=<?php $c=$debut-5; echo "$c"; ?>"> < Page précédente</a>
+    <a href="../controler/Controlleur.ctrl.php?debut=<?php $c=$debut+5; echo "$c"; ?>">Page suivante > </a></p>
   </body>
 </html>

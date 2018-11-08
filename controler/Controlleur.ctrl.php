@@ -1,6 +1,16 @@
 <?php
   // Inclusion du modèle
   include_once("../model/DAO.class.php");
+  $cat = null; $loc = null; $tri = null;
+  if (isset($_GET['debut'])) {
+    if ($_GET['debut'] < 0) {
+      $debut = 0;
+    } else {
+      $debut = $_GET['debut'];
+    }
+  } else {
+    $debut = 0;
+  }
 
   if (isset($_GET['choixMultiple'])) {
     if (isset($_GET['categorie'])) {
@@ -58,6 +68,10 @@
     }*/
     else {
       $articles = $dao->getAllArticle();
+      if ($debut > count($articles)) {
+        $debut = $debut - 5;
+      }
+      $articles = array_slice($articles, $debut, $debut+5);   // returns "a", "b", and "c"
       include("../view/articles.view.php");
     }
   }

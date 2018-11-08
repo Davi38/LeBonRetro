@@ -103,7 +103,7 @@
       }
       if ($categorie != null && $localisation != null) {
         $requetteAdd .= ' AND ';
-      } elseif ($categorie = null) {
+      } elseif ($categorie == null && $localisation != null) {
         $requetteAdd .= ' WHERE ';
       }
       if ($localisation != null) {

@@ -14,7 +14,7 @@
         <input type="texte" name="id" autofocus/>
         <p>Mot de passe : </p>
         <input type="texte" name="mdp"/>
-        <br>
+        <br><br>
         <input type="submit" name="action" value="Valider" />
       </fieldset>
     </form>
