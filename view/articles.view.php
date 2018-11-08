@@ -13,10 +13,10 @@
         <p>
           Catégorie :
           <select name="categorie">
+             <option value="all">Toutes catégories</option>
              <option value="ordinateur" <?php if($cat=="ordinateur"){echo"selected";} ?> >Ordinateur</option>
              <option value="telephone" <?php if($cat=="telephone"){echo"selected";} ?> >Téléphone</option>
              <option value="decoration" <?php if($cat=="decoration"){echo"selected";} ?> >Décoration</option>
-             <option value="all" <?php if($cat=="all"){echo"selected";} ?> >Toutes catégories</option>
           </select>
         </p>
       </div>
@@ -30,9 +30,9 @@
         <p>
           Trier par :
           <select name="tri">
-             <option value="DatePublication">Date</option>
-             <option value="prix">Prix</option>
-             <option value="nom">Ordre alphabétique</option>
+             <option value="DatePublication" <?php if($tri=="DatePublication"){echo"selected";} ?> >Date</option>
+             <option value="prix" <?php if($tri=="prix"){echo"selected";} ?> >Prix</option>
+             <option value="nom" <?php if($tri=="nom"){echo"selected";} ?> >Ordre alphabétique</option>
           </select>
         </p>
       </div>
@@ -49,8 +49,10 @@
           print '<p>Publié le ' . $article->datePublication . '</p>';
           print "</article></a>";
         }
+        if ($cat==null) {
     ?>
     <p class="changementPage"><a href="../controler/Controlleur.ctrl.php?debut=<?php $c=$debut-5; echo "$c"; ?>"> < Page précédente</a>
     <a href="../controler/Controlleur.ctrl.php?debut=<?php $c=$debut+5; echo "$c"; ?>">Page suivante > </a></p>
+    <?php } ?>
   </body>
 </html>

@@ -33,6 +33,12 @@
       $tri = null;
     }
     $articles = $dao->getArticlesCriteresMultiple($cat, $loc, $tri);
+    if ($debut > count($articles)) {
+      $debut = $debut - 5;
+    }
+    if ($cat==null) {
+      $articles = array_slice($articles, $debut, $debut+5);
+    }
     include("../view/articles.view.php");
   }
 
@@ -42,6 +48,13 @@
         $articles = $dao->getAllArticle();
       } else {
       $articles = $dao->getArticlesCategorie($_GET['categorie']);
+      }
+
+      if ($debut > count($articles)) {
+        $debut = $debut - 5;
+      }
+      if ($cat==null) {
+        $articles = array_slice($articles, $debut, $debut+5);
       }
       include("../view/articles.view.php");
 
@@ -60,18 +73,15 @@
           include("../view/main.view.php");
         }
 
-    } /*elseif (isset($_GET['localisation'])) {
-      if ($_GET['localisation'] != "") {
-        $articles = $dao->getArticlesLocalisation();
-        include("../view/articles.view.php");
-      }
-    }*/
+    }
     else {
       $articles = $dao->getAllArticle();
       if ($debut > count($articles)) {
         $debut = $debut - 5;
       }
-      $articles = array_slice($articles, $debut, $debut+5);   // returns "a", "b", and "c"
+      if ($cat==null) {
+        $articles = array_slice($articles, $debut, $debut+5);
+      }
       include("../view/articles.view.php");
     }
   }
